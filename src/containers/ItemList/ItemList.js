@@ -4,8 +4,31 @@ import {Button, Card, CardBody, CardImg, CardSubtitle, CardText, CardTitle} from
 import fullSizeIcon from "../../res/full_icon.png";
 import {formatToMoney, randStr} from "../../lib/utils";
 import {getPath} from "../../lib/url";
+import {quickConnect} from "../../redux";
 
 class ItemList extends Component {
+
+    buy= ()=>{
+        const {itemId, history}= this.props;
+        const billingId= randStr(20);
+
+        history.push(getPath(`/billing/${billingId}`));
+    };
+    addToBucket= ()=>{
+        const {uiKit, history}= this.props;
+        uiKit.popup.make((
+            <div className={'centering'}>
+                <h4>장바구니에 추가되었습니다</h4>
+                <br/>
+                <div className={'centering'}>
+                    <Button color={'primary'} onClick={()=>{uiKit.popup.destroy();}}>닫기</Button>
+                    &nbsp;
+                    <Button color={'secondary'} onClick={()=>{uiKit.popup.destroy(); history.push(getPath(`/mypage/bucket`)); }}>장바구니로 이동</Button>
+                </div>
+            </div>
+        ));
+    };
+
     render() {
         const {items, history, match}= this.props;
         return (
@@ -26,9 +49,9 @@ class ItemList extends Component {
                                             <CardSubtitle>{value.seller}</CardSubtitle>
                                             <br/>
                                             <div className={'centering'}>
-                                                <Button color={'primary'} size={'sm'} onClick={()=>{history.push(getPath(`/billing/${randStr(10)}`))}}>상세보기</Button>
+                                                <Button color={'primary'} size={'sm'} onClick={this.buy}>즉시구매</Button>
                                                 &nbsp;&nbsp;
-                                                <Button color={'info'} size={'sm'}>장바구니</Button>
+                                                <Button color={'info'} size={'sm'} onClick={this.addToBucket}>장바구니</Button>
                                             </div>
                                         </CardBody>
                                     </Card>
@@ -42,4 +65,4 @@ class ItemList extends Component {
     }
 }
 
-export default ItemList;
+export default quickConnect(ItemList);

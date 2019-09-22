@@ -5,6 +5,7 @@ import {Button, Input, Progress, Table} from "reactstrap";
 import smallImg from '../../res/simple_icon.png';
 import Label from "../../containers/Join/JoinAsInfluencer/JoinAsInfluencer";
 import BottomNavigation from "../../containers/Navigation/BottomNavigation";
+import {getPath} from "../../lib/url";
 
 class Bucket extends Component {
     bucketList= [

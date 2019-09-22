@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Table from "reactstrap/es/Table";
-import {formatToMoney} from "../../lib/utils";
+import {formatToMoney, randStr} from "../../lib/utils";
 import {Progress} from "reactstrap";
+import {getPath} from "../../lib/url";
 
 class Spec extends Component {
     history= [
@@ -13,7 +14,8 @@ class Spec extends Component {
             end: '2019-09-30',
             clicked: 12426421,
             dest: 133332,
-            type: 'banner'
+            type: 'banner',
+            adId: randStr(20),
         },
         {
             ader: '광고주',
@@ -23,7 +25,8 @@ class Spec extends Component {
             end: '2019-09-30',
             clicked: 12426421,
             dest: 133332,
-            type: 'banner'
+            type: 'banner',
+            adId: randStr(20),
         },
         {
             ader: '광고주',
@@ -33,7 +36,8 @@ class Spec extends Component {
             end: '2019-09-30',
             clicked: 12426421,
             dest: 133332,
-            type: 'banner'
+            type: 'banner',
+            adId: randStr(20),
         },
         {
             ader: '광고주',
@@ -43,7 +47,8 @@ class Spec extends Component {
             end: '2019-09-30',
             clicked: 12313,
             dest: 133332,
-            type: 'funding'
+            type: 'funding',
+            adId: randStr(20),
         },
         {
             ader: '광고주',
@@ -53,7 +58,8 @@ class Spec extends Component {
             end: '2019-09-30',
             clicked: 12426421,
             dest: 133332,
-            type: 'funding'
+            type: 'funding',
+            adId: randStr(20),
         },
         {
             ader: '광고주',
@@ -63,7 +69,8 @@ class Spec extends Component {
             end: '2019-09-30',
             clicked: 12426421,
             dest: 133332,
-            type: 'funding'
+            type: 'funding',
+            adId: randStr(20),
         },
 
     ];
@@ -86,7 +93,7 @@ class Spec extends Component {
                     this.history.map((h)=>{
                         if(h.type=== type)
                             return (
-                                <tr>
+                                <tr className={'clickable'} onClick={()=>{this.props.history.push(getPath(`/advertise/${h.adId}`))}}>
                                     <td>{h.ader}</td>
                                     <td>{h.adname}</td>
                                     <td>{formatToMoney(h.admoney)}원</td>

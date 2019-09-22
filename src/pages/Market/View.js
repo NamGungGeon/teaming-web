@@ -54,7 +54,7 @@ class View extends Component {
                 </div>
             </div>
         ));
-    }
+    };
 
     render() {
         const {match, history}= this.props;

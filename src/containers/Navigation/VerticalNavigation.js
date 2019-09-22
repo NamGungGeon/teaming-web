@@ -31,6 +31,11 @@ class VerticalNavigation extends Component {
             requireAuth: false,
         },
         {
+            title: '광고',
+            to: '/advertise',
+            requireAuth: true,
+        },
+        {
             title: '마이페이지',
             to: '/mypage',
             requireAuth: true,

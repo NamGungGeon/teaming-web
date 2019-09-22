@@ -18,7 +18,7 @@ const initAuth= (newEmail, newToken)=>{
             email, token
         };
     else
-        return null
+        return null;
 }
 const user= initAuth();
 

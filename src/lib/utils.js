@@ -50,3 +50,9 @@ export const formatFromMoney= (money)=>{
     const num= money.replaceAll(',', '');
     return parseInt(num);
 }
+
+export const getDays= (milliSecond)=>{
+    const ms= Math.abs(milliSecond);
+    return parseInt(ms/(1000*60*60*24));
+}
+

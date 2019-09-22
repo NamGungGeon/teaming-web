@@ -15,13 +15,13 @@ class JoinTypes extends Component {
             icon: Person,
             title: '일반 유저',
             desc: '일반유저는 여기로!',
-            to: '',
+            to: '/join/influencer',
         },
         {
             icon: Store,
             title: '광고주',
             desc: '광고주는 여기로!',
-            to: '',
+            to: '/join/influencer',
         },
         {
             icon: GamesSharp,
@@ -35,7 +35,7 @@ class JoinTypes extends Component {
         this.props.NavDispatcher.vertical(false);
     }
     componentWillUnmount() {
-        this.props.NavDispatcher.horizontal(true);
+        this.props.NavDispatcher.vertical(true);
     }
 
     render() {

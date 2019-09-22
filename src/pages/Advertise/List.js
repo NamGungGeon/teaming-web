@@ -1,74 +1,29 @@
 import React, {Component} from 'react';
+import PageTitle from "../../components/PageTitle/PageTitle";
 import {
-    Dropdown, DropdownItem, DropdownMenu, DropdownToggle,
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle,
     InputGroup,
     InputGroupAddon,
     InputGroupText
 } from "reactstrap";
 import Input from "reactstrap/es/Input";
 import ItemList from "../../containers/ItemList/ItemList";
-import classNames from 'classnames';
-import PageTitle from "../../components/PageTitle/PageTitle";
-import {randStr} from "../../lib/utils";
-import {getPath} from "../../lib/url";
-import Button from "reactstrap/es/Button";
-import {quickConnect} from "../../redux";
+import InfluencerList from "../../containers/InfluencerList/InfluencerList";
 
 class List extends Component {
-    state= {
-        items: [
-            {
-                title: '상품!',
-                price: 5000,
-                text: '이 상품은 너무 조아용',
-                seller: '판매자',
-                score: 4.5,
-                id: randStr(30),
-            },
-            {
-                title: '상품!',
-                price: 5000,
-                text: '이 상품은 너무 조아용',
-                seller: '판매자',
-                score: 4.5,
-                id: randStr(30),
-            },
-            {
-                title: '상품!',
-                price: 5000,
-                text: '이 상품은 너무 조아용',
-                seller: '판매자',
-                score: 4.5,
-                id: randStr(30),
-            },
-            {
-                title: '상품!',
-                price: 5000,
-                text: '이 상품은 너무 조아용',
-                seller: '판매자',
-                score: 4.5,
-                id: randStr(30),
-            },
-            {
-                title: '상품!',
-                price: 5000,
-                text: '이 상품은 너무 조아용',
-                seller: '판매자',
-                score: 4.5,
-                id: randStr(30),
-            },
+    state={
 
-
-        ],
     };
-
 
     render() {
         const {history, match}= this.props;
         return (
             <div className={'guideLine'}>
                 <div>
-                    <PageTitle title={'마켓'} explain={'와! 게이밍기어! 신발보다 싸다!'} centering/>
+                    <PageTitle title={'인플루언서 매칭'} explain={'광고에 적합한 인플루언서를 직접 선택하실 수 있습니다'} centering/>
 
                     <InputGroup>
                         <span className={'blank'}></span>
@@ -103,11 +58,11 @@ class List extends Component {
                 </div>
                 <br/><br/>
 
-                <ItemList items={this.state.items} match={match} history={history}/>
+                <InfluencerList history={history}/>
 
             </div>
         );
     }
 }
 
-export default quickConnect(List);
+export default List;

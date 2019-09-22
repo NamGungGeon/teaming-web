@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 class Sns extends Component {
     render() {
         return (
             <div>
-                <h3>SNS 계정 관리</h3>
-                <p className={'explain'}>
-                    도움말
-                </p>
+                <PageTitle title={'SNS계정 관리'} explain={'도움말'} noMargin/>
                 <br/>
+
+
             </div>
         );
     }

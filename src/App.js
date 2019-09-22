@@ -14,6 +14,9 @@ import HorizontalNavigation from "./containers/Navigation/HorizontalNavigation";
 import MarketRoot from "./pages/Market";
 import {getPath} from "./lib/url";
 import BillingRoot from "./pages/Billing";
+import AdvertiseRoot from "./pages/Advertise";
+import UserRoot from "./pages/User";
+import TeamBuildRoot from "./pages/TeamBuild";
 
 class App extends Component {
     state= {};
@@ -38,6 +41,9 @@ class App extends Component {
                     <Route path={getPath("/mypage")} component={MyPageRoot}/>
                     <Route path={getPath("/market")} component={MarketRoot}/>
                     <Route path={getPath('/billing')} component={BillingRoot}/>
+                    <Route path={getPath('/advertise')} component={AdvertiseRoot}/>
+                    <Route path={getPath('/user')} component={UserRoot}/>
+                    <Route path={getPath('/team-build')} component={TeamBuildRoot}/>
                 </div>
             </div>
         );
