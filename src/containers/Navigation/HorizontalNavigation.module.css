@@ -21,22 +21,19 @@ nav.horizontal+ div{
     margin-left: 250px;
     padding: 16px;
 }
-nav.horizontal> div:nth-child(1){
-    text-align: center;
-}
 .icon{
     width: 100%;
     height: auto;
 }
-nav.horizontal> div:nth-child(2){
+nav.horizontal> div{
     text-align: right;
 }
-nav.horizontal> div:nth-child(2) *{
+nav.horizontal> div> *{
     margin: 8px 0;
     transition-property: transform;
     transition-duration: 0.3s;
     color: #333333;
 }
-nav.horizontal> div:nth-child(2) *:hover{
+nav.horizontal> div *:hover{
     transform: translateX(-4px);
 }

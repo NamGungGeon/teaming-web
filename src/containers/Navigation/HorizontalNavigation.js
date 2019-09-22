@@ -13,8 +13,6 @@ class HorizontalNavigation extends Component {
         return (
             <nav className={classNames(styles.horizontal)}>
                 <div>
-                </div>
-                <div>
                     {
                         menus && menus.map((value)=>{
                             if(!only || !value.type || value.type===only)
@@ -23,6 +21,8 @@ class HorizontalNavigation extends Component {
                                 )
                         })
                     }
+                </div>
+                <div>
                 </div>
             </nav>
         );

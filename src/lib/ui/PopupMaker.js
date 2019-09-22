@@ -10,7 +10,7 @@ export const PopupMaker= (component)=>{
             component.setState({
                 ...component.state,
                 ['popupContent'+ prefix]: content? content: '',
-                ['popupPreventClose'+ prefix]: preventClose,
+                ['popupPreventClose'+ prefix]: !preventClose,
             });
         },
         destroy: ()=>{

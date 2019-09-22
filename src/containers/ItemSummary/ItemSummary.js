@@ -14,10 +14,12 @@ import Gallery from "../../components/Gallery/Gallery";
 
 class ItemSummary extends Component {
     render() {
+        const {buy, addToBucket}= this.props;
         const {itemId, history}= this.props;
         const images= [
             {src: testImg},
-        ]
+        ];
+
         return (
             <Container>
                 <Row className={styles.container}>
@@ -38,9 +40,9 @@ class ItemSummary extends Component {
                             <Progress value={"25"}/>
                             <span>{(25/33*100).toFixed(1)}%</span>
                             <br/><br/>
-                            <Button color={'primary'} onClick={()=>{history.push(getPath(`/billing/${randStr(20)}`))}}>구매</Button>
+                            <Button color={'primary'} onClick={buy}>구매</Button>
                             &nbsp; &nbsp;
-                            <Button color={'info'}>장바구니에 담기</Button>
+                            <Button color={'info'} onClick={addToBucket}>장바구니에 담기</Button>
                         </div>
                     </Col>
                 </Row>
